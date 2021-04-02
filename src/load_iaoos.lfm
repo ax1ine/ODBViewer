@@ -1,0 +1,62 @@
+object frmload_iaoos: Tfrmload_iaoos
+  Left = 276
+  Height = 522
+  Top = 240
+  Width = 1182
+  Caption = 'Load IAOOS'
+  ClientHeight = 522
+  ClientWidth = 1182
+  DesignTimePPI = 144
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.6.0'
+  object btnStart: TButton
+    Left = 792
+    Height = 33
+    Top = 16
+    Width = 144
+    Caption = 'Start'
+    OnClick = btnStartClick
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 31
+    Height = 25
+    Top = 24
+    Width = 37
+    Caption = 'Data'
+    ParentColor = False
+  end
+  object ePath: TEdit
+    Left = 88
+    Height = 33
+    Top = 16
+    Width = 568
+    TabOrder = 1
+    Text = 'Z:\ODBViewer\data\IAOOS\'
+  end
+  object Memo1: TMemo
+    Left = 288
+    Height = 424
+    Top = 72
+    Width = 872
+    ScrollBars = ssBoth
+    TabOrder = 2
+  end
+  object lbC: TListBox
+    Left = 31
+    Height = 424
+    Top = 72
+    Width = 233
+    ItemHeight = 0
+    TabOrder = 3
+  end
+  object chkWrite: TCheckBox
+    Left = 688
+    Height = 29
+    Top = 20
+    Width = 72
+    Caption = 'Write'
+    TabOrder = 4
+  end
+end

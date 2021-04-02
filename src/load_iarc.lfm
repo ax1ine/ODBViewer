@@ -1,0 +1,40 @@
+object frmLoadIARC: TfrmLoadIARC
+  Left = 542
+  Height = 502
+  Top = 318
+  Width = 730
+  Caption = 'frmLoadIARC'
+  ClientHeight = 502
+  ClientWidth = 730
+  DesignTimePPI = 144
+  LCLVersion = '2.0.6.0'
+  object btnMetadata: TButton
+    Left = 24
+    Height = 38
+    Top = 24
+    Width = 113
+    Caption = 'btnMetadata'
+    OnClick = btnMetadataClick
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 160
+    Height = 38
+    Top = 24
+    Width = 113
+    Caption = 'Button2'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Memo1: TMemo
+    Left = 24
+    Height = 384
+    Top = 88
+    Width = 680
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 2
+  end
+end

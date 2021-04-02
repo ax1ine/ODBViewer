@@ -1,0 +1,31 @@
+object frmtest: Tfrmtest
+  Left = 678
+  Height = 528
+  Top = 327
+  Width = 1006
+  Caption = 'frmtest'
+  ClientHeight = 528
+  ClientWidth = 1006
+  DesignTimePPI = 144
+  LCLVersion = '2.0.6.0'
+  object btnUpdateVessel: TButton
+    Left = 24
+    Height = 38
+    Top = 24
+    Width = 153
+    Caption = 'Update Vessel'
+    OnClick = btnUpdateVesselClick
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 200
+    Height = 488
+    Top = 24
+    Width = 784
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+end

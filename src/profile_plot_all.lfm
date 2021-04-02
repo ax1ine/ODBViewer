@@ -1,0 +1,94 @@
+object frmprofile_plot_all: Tfrmprofile_plot_all
+  Left = 634
+  Height = 541
+  Top = 266
+  Width = 704
+  Caption = 'frmprofile_plot_all'
+  ClientHeight = 541
+  ClientWidth = 704
+  Constraints.MinHeight = 500
+  Constraints.MinWidth = 650
+  DesignTimePPI = 144
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  Visible = True
+  object Chart1: TChart
+    Left = 0
+    Height = 502
+    Top = 39
+    Width = 704
+    AxisList = <    
+      item
+        Grid.Visible = False
+        Arrow.Inverted = True
+        Inverted = True
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = 'Depth, m'
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Grid.Visible = False
+        Alignment = calTop
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    BackColor = clWhite
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Toolset = ChartToolset1
+    Align = alClient
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 39
+    Top = 0
+    Width = 704
+    Caption = 'ToolBar1'
+    Images = frmicons.IL1
+    TabOrder = 1
+    object btnNext: TToolButton
+      Left = 36
+      Top = 2
+      Caption = 'btnNext'
+    end
+    object btnPrior: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'btnPrior'
+    end
+  end
+  object ChartToolset1: TChartToolset
+    left = 160
+    top = 224
+    object DPC: TDataPointClickTool
+      Shift = [ssLeft]
+      GrabRadius = 2
+      ActiveCursor = crHandPoint
+      OnPointClick = DPCPointClick
+    end
+    object DPH: TDataPointHintTool
+      OnAfterMouseMove = DPHAfterMouseMove
+      GrabRadius = 2
+      ActiveCursor = crHandPoint
+    end
+    object ZD: TZoomDragTool
+      Shift = [ssLeft]
+      Brush.Style = bsClear
+      RestoreExtentOn = [zreDragTopLeft, zreDragTopRight, zreDragBottomLeft]
+    end
+    object ZMW: TZoomMouseWheelTool
+    end
+  end
+end

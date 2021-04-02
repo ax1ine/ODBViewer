@@ -1,0 +1,95 @@
+object frmparameters_list: Tfrmparameters_list
+  Left = 723
+  Height = 525
+  Top = 274
+  Width = 375
+  BorderIcons = [biSystemMenu]
+  Caption = 'Profiles selection'
+  ClientHeight = 525
+  ClientWidth = 375
+  Color = clBtnFace
+  Constraints.MinHeight = 525
+  Constraints.MinWidth = 375
+  DesignTimePPI = 144
+  Font.Color = clWindowText
+  Font.Height = -17
+  Font.Name = 'MS Sans Serif'
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.0.6.0'
+  Visible = True
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 525
+    Top = 0
+    Width = 375
+    ActivePage = TabSheet1
+    Align = alClient
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Parameter'
+      ClientHeight = 492
+      ClientWidth = 367
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      object lbParameters: TListBox
+        Left = 12
+        Height = 420
+        Top = 12
+        Width = 340
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        Columns = 1
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        Items.Strings = (
+          ''
+        )
+        ItemHeight = 20
+        OnClick = lbParametersClick
+        ParentFont = False
+        TabOrder = 0
+      end
+      object btnAmountOfProfiles: TButton
+        Left = 12
+        Height = 26
+        Hint = 'Amount of profiles in tables'
+        Top = 448
+        Width = 228
+        Anchors = [akLeft, akRight, akBottom]
+        Caption = 'Amount of profiles'
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        OnClick = btnAmountOfProfilesClick
+        ParentFont = False
+        TabOrder = 1
+      end
+      object btnCancel: TButton
+        Left = 255
+        Height = 26
+        Top = 448
+        Width = 97
+        Anchors = [akRight, akBottom]
+        Caption = 'Cancel'
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        OnClick = btnCancelClick
+        ParentFont = False
+        TabOrder = 2
+      end
+    end
+  end
+end

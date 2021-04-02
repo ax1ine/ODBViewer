@@ -1,0 +1,250 @@
+object frmimport_odb: Tfrmimport_odb
+  Left = 559
+  Height = 634
+  Top = 194
+  Width = 613
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Import from ODB (*.ib, *.fdb)'
+  ClientHeight = 634
+  ClientWidth = 613
+  Color = clBtnFace
+  Constraints.MinWidth = 570
+  DesignTimePPI = 144
+  Font.Color = clWindowText
+  Font.Height = -17
+  Font.Name = 'MS Sans Serif'
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 36
+    Top = 598
+    Width = 613
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    Panels = <    
+      item
+        Width = 382
+      end    
+      item
+        Width = 75
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object PageControl1: TPageControl
+    Left = 24
+    Height = 386
+    Top = 18
+    Width = 570
+    ActivePage = TabSheet1
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'All data'
+      ClientHeight = 353
+      ClientWidth = 562
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      object Edit2: TEdit
+        Left = 12
+        Height = 28
+        Top = 12
+        Width = 489
+        Font.Color = clBlack
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        OnChange = Edit2Change
+        ParentFont = False
+        TabOrder = 0
+      end
+      object DB2TableList: TListBox
+        Left = 36
+        Height = 98
+        Top = 102
+        Width = 170
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        ItemHeight = 0
+        ParentFont = False
+        TabOrder = 1
+        Visible = False
+      end
+      object CheckListBox1: TCheckListBox
+        Cursor = crHandPoint
+        Left = 12
+        Height = 237
+        Hint = 'Drag to reorder'
+        Top = 54
+        Width = 530
+        Anchors = [akTop, akLeft, akBottom]
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        ItemHeight = 0
+        OnClick = CheckListBox1Click
+        OnDblClick = CheckListBox1DblClick
+        OnDrawItem = CheckListBox1DrawItem
+        OnDragDrop = CheckListBox1DragDrop
+        OnDragOver = CheckListBox1DragOver
+        OnMouseDown = CheckListBox1MouseDown
+        ParentBidiMode = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Sorted = True
+        TabOrder = 2
+      end
+      object btnOpenFolder: TButton
+        Left = 510
+        Height = 32
+        Top = 12
+        Width = 32
+        Caption = '...'
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        OnClick = btnOpenFolderClick
+        ParentFont = False
+        TabOrder = 3
+      end
+      object DB1TableList: TListBox
+        Left = 48
+        Height = 146
+        Top = 72
+        Width = 182
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        ItemHeight = 0
+        ParentFont = False
+        TabOrder = 4
+        Visible = False
+      end
+    end
+  end
+  object rgDuplicates: TRadioGroup
+    Left = 322
+    Height = 116
+    Top = 412
+    Width = 272
+    AutoFill = True
+    Caption = 'Operations with duplicates'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 91
+    ClientWidth = 268
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    ItemIndex = 0
+    Items.Strings = (
+      'Remain existing station'
+      'Replace with appended station'
+      'Add station increasing version'
+    )
+    ParentFont = False
+    TabOrder = 2
+  end
+  object BtnMergeDatabases: TBitBtn
+    Left = 192
+    Height = 38
+    Top = 544
+    Width = 237
+    Caption = 'Import'
+    Font.Color = clRed
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    OnClick = BtnMergeDatabasesClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object GroupBox2: TGroupBox
+    Left = 24
+    Height = 116
+    Top = 412
+    Width = 278
+    Caption = 'Thresholds'
+    ClientHeight = 91
+    ClientWidth = 274
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabOrder = 4
+    object Label2: TLabel
+      Left = 16
+      Height = 20
+      Top = 32
+      Width = 134
+      Caption = 'Position offset, min'
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      ParentColor = False
+      ParentFont = False
+    end
+    object sePos: TSpinEdit
+      Left = 171
+      Height = 28
+      Top = 24
+      Width = 80
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      MaxValue = 0
+      ParentFont = False
+      TabOrder = 0
+      Value = 2
+    end
+  end
+  object DB2: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Password = 'masterkey'
+    Transaction = TR2
+    UserName = 'SYSDBA'
+    CheckTransactionParams = False
+    left = 288
+    top = 200
+  end
+  object TR2: TSQLTransaction
+    Active = False
+    Database = DB2
+    left = 352
+    top = 200
+  end
+  object ib2q1: TSQLQuery
+    FieldDefs = <>
+    Database = DB2
+    Transaction = TR2
+    Params = <>
+    left = 416
+    top = 200
+  end
+  object ib2q2: TSQLQuery
+    FieldDefs = <>
+    Database = DB2
+    Transaction = TR2
+    Params = <>
+    left = 480
+    top = 200
+  end
+end

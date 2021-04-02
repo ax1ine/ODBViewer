@@ -1,0 +1,16 @@
+{"version":1,"strings":[
+{"hash":21376,"name":"tfrmmap.caption","sourcebytes":[77,97,112],"value":"Map"},
+{"hash":488320,"name":"tfrmmap.pmap.caption","sourcebytes":[112,109,97,112],"value":"pmap"},
+{"hash":106991073,"name":"tfrmmap.toolbar1.caption","sourcebytes":[84,111,111,108,66,97,114,49],"value":"ToolBar1"},
+{"hash":23458974,"name":"tfrmmap.btnzoomin.hint","sourcebytes":[90,111,111,109,32,73,110],"value":"Zoom In"},
+{"hash":106909908,"name":"tfrmmap.btnzoomout.hint","sourcebytes":[90,111,111,109,32,79,117,116],"value":"Zoom Out"},
+{"hash":160486418,"name":"tfrmmap.toolbutton2.caption","sourcebytes":[84,111,111,108,66,117,116,116,111,110,50],"value":"ToolButton2"},
+{"hash":88033022,"name":"tfrmmap.btnshowselected.hint","sourcebytes":[67,101,110,116,101,114,32,97,116,32,115,101,108,101,99,116,101,100,32,115,116,97,116,105,111,110],"value":"Center at selected station"},
+{"hash":162836372,"name":"tfrmmap.btnshowselected.caption","sourcebytes":[98,116,110,83,104,111,119,83,101,108,101,99,116,101,100],"value":"btnShowSelected"},
+{"hash":212989283,"name":"tfrmmap.btnshowallstations.hint","sourcebytes":[83,104,111,119,32,97,108,108,32,115,116,97,116,105,111,110,115],"value":"Show all stations"},
+{"hash":178777603,"name":"tfrmmap.btnshowallstations.caption","sourcebytes":[98,116,110,83,104,111,119,65,108,108,83,116,97,116,105,111,110,115],"value":"btnShowAllStations"},
+{"hash":160486419,"name":"tfrmmap.toolbutton3.caption","sourcebytes":[84,111,111,108,66,117,116,116,111,110,51],"value":"ToolButton3"},
+{"hash":160486417,"name":"tfrmmap.toolbutton1.caption","sourcebytes":[84,111,111,108,66,117,116,116,111,110,49],"value":"ToolButton1"},
+{"hash":215177075,"name":"tfrmmap.btnsettings.caption","sourcebytes":[98,116,110,83,101,116,116,105,110,103,115],"value":"btnSettings"},
+{"hash":169393411,"name":"tfrmmap.btnsavemapas.caption","sourcebytes":[98,116,110,83,97,118,101,77,97,112,65,115],"value":"btnSaveMapAs"}
+]}

@@ -1,0 +1,811 @@
+object frmmain: Tfrmmain
+  Left = 295
+  Height = 733
+  Top = 180
+  Width = 1300
+  Caption = 'DB Viewer'
+  ClientHeight = 703
+  ClientWidth = 1300
+  DesignTimePPI = 144
+  Menu = MM
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '2.0.6.0'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 625
+    Top = 78
+    Width = 1300
+    ActivePage = TabSheet2
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Selection'
+      ClientHeight = 587
+      ClientWidth = 1292
+      object gbRegion: TGroupBox
+        Left = 24
+        Height = 160
+        Top = 16
+        Width = 416
+        Caption = 'Region'
+        ClientHeight = 135
+        ClientWidth = 412
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object seLatMax: TFloatSpinEdit
+          Left = 144
+          Height = 28
+          Top = 16
+          Width = 122
+          Alignment = taCenter
+          DecimalPlaces = 5
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          MaxValue = 90
+          MinValue = -90
+          ParentFont = False
+          TabOrder = 0
+          Value = 0
+        end
+        object seLatMin: TFloatSpinEdit
+          Left = 144
+          Height = 28
+          Top = 80
+          Width = 122
+          Alignment = taCenter
+          DecimalPlaces = 5
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          MaxValue = 90
+          MinValue = -90
+          ParentFont = False
+          TabOrder = 1
+          Value = 0
+        end
+        object seLonMin: TFloatSpinEdit
+          Left = 22
+          Height = 28
+          Top = 48
+          Width = 122
+          Alignment = taCenter
+          DecimalPlaces = 5
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          MaxValue = 180
+          MinValue = -180
+          ParentFont = False
+          TabOrder = 2
+          Value = 0
+        end
+        object seLonMax: TFloatSpinEdit
+          Left = 266
+          Height = 28
+          Top = 48
+          Width = 122
+          Alignment = taCenter
+          DecimalPlaces = 5
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          MaxValue = 180
+          MinValue = -180
+          ParentFont = False
+          TabOrder = 3
+          Value = 0
+        end
+      end
+      object gbDateandTime: TGroupBox
+        Left = 464
+        Height = 136
+        Top = 16
+        Width = 312
+        Caption = 'Date and time'
+        ClientHeight = 111
+        ClientWidth = 308
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        object dtpDateMin: TDateTimePicker
+          Left = 24
+          Height = 28
+          Top = 16
+          Width = 114
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          TabOrder = 0
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 43775
+          Time = 0.527798784722108
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object dtpDateMax: TDateTimePicker
+          Left = 166
+          Height = 28
+          Top = 16
+          Width = 114
+          CenturyFrom = 1941
+          MaxDate = 2958465
+          MinDate = -53780
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          TabOrder = 1
+          TrailingSeparator = False
+          TextForNullDate = 'NULL'
+          LeadingZeros = True
+          Kind = dtkDate
+          TimeFormat = tf24
+          TimeDisplay = tdHMS
+          DateMode = dmComboBox
+          Date = 43775
+          Time = 0.527798784722108
+          UseDefaultSeparators = True
+          HideDateTimeParts = []
+          MonthNames = 'Long'
+        end
+        object chkPeriod: TCheckBox
+          Left = 24
+          Height = 29
+          Top = 64
+          Width = 81
+          Caption = 'Period'
+          TabOrder = 2
+        end
+      end
+      object gbAuxiliaryParameters: TGroupBox
+        Left = 24
+        Height = 176
+        Top = 192
+        Width = 752
+        Caption = 'Auxiliary parameters'
+        ClientHeight = 151
+        ClientWidth = 748
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 2
+        object chkNOTCountry: TCheckBox
+          Left = 22
+          Height = 29
+          Top = 56
+          Width = 121
+          Caption = 'NOT Country'
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          TabOrder = 0
+        end
+        object chkNOTSource: TCheckBox
+          Left = 22
+          Height = 29
+          Top = 16
+          Width = 117
+          Caption = 'NOT Source'
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          TabOrder = 1
+        end
+        object cbSource: TCheckComboBox
+          Left = 184
+          Height = 26
+          Top = 16
+          Width = 536
+          DropDownCount = 12
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ItemHeight = 20
+          OnDropDown = cbSourceDropDown
+          ParentFont = False
+          TabOrder = 2
+        end
+        object cbCountry: TCheckComboBox
+          Left = 184
+          Height = 26
+          Top = 58
+          Width = 536
+          DropDownCount = 12
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ItemHeight = 20
+          OnDropDown = cbCountryDropDown
+          ParentFont = False
+          TabOrder = 3
+        end
+        object chkNOTVessel: TCheckBox
+          Left = 22
+          Height = 29
+          Top = 93
+          Width = 114
+          Caption = 'NOT Vessel'
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          ParentFont = False
+          TabOrder = 4
+        end
+        object cbVessel: TCheckComboBox
+          Left = 184
+          Height = 26
+          Top = 96
+          Width = 536
+          DropDownCount = 12
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ItemHeight = 20
+          OnDropDown = cbVesselDropDown
+          ParentFont = False
+          TabOrder = 5
+        end
+      end
+      object btnSelect: TButton
+        Left = 792
+        Height = 38
+        Top = 24
+        Width = 128
+        Caption = 'Select'
+        OnClick = btnSelectClick
+        TabOrder = 3
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Data'
+      ClientHeight = 587
+      ClientWidth = 1292
+      object pDataCruise: TPanel
+        Left = 0
+        Height = 587
+        Top = 0
+        Width = 1292
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 587
+        ClientWidth = 1292
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object DBGridStation: TDBGrid
+          Left = 0
+          Height = 280
+          Top = 0
+          Width = 1292
+          Align = alTop
+          AlternateColor = 13631478
+          AutoAdvance = aaNone
+          Color = 13627366
+          Columns = <          
+            item
+              Title.Caption = 'ID'
+              FieldName = 'absnum'
+            end          
+            item
+              DropDownRows = 20
+              Title.Caption = 'Latitude'
+              FieldName = 'STLAT'
+            end          
+            item
+              Title.Caption = 'Longitude'
+              FieldName = 'STLON'
+            end          
+            item
+              DropDownRows = 20
+              Title.Caption = 'Date'
+              FieldName = 'STDATE'
+              DisplayFormat = 'DD.MM.YYYY'
+            end          
+            item
+              Title.Caption = 'Time'
+              FieldName = 'STTIME'
+            end          
+            item
+              Title.Caption = 'Last level'
+              FieldName = 'STLASTLEVEL'
+            end          
+            item
+              Title.Caption = 'Depth'
+              FieldName = 'STDEPTHSOURCE'
+            end          
+            item
+              Title.Caption = 'GEBCO'
+              FieldName = 'STDEPTHGRID'
+            end          
+            item
+              Title.Caption = 'Source'
+              FieldName = 'STSOURCE'
+            end          
+            item
+              Title.Caption = 'Country'
+              FieldName = 'STCOUNTRYNAME'
+            end          
+            item
+              Title.Caption = 'Vessel'
+              FieldName = 'STVESSELNAME'
+            end          
+            item
+              Title.Caption = 'Flag'
+              Width = 50
+              FieldName = 'STFLAG'
+            end          
+            item
+              Title.Caption = 'Ver.'
+              FieldName = 'STVERSION'
+            end>
+          DataSource = DS
+          FixedCols = 0
+          Flat = True
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+          ParentFont = False
+          Scrollbars = ssAutoBoth
+          TabOrder = 0
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -17
+          TitleFont.Name = 'MS Sans Serif'
+          TitleStyle = tsStandard
+          OnCellClick = DBGridStationCellClick
+          OnKeyUp = DBGridStationKeyUp
+          OnPrepareCanvas = DBGridStationPrepareCanvas
+          OnTitleClick = DBGridStationTitleClick
+        end
+        object Splitter3: TSplitter
+          Cursor = crVSplit
+          Left = 0
+          Height = 8
+          Top = 280
+          Width = 1292
+          Align = alTop
+          ResizeAnchor = akTop
+        end
+        object DBGridStationInfo: TDBGrid
+          Left = 0
+          Height = 299
+          Top = 288
+          Width = 1292
+          Align = alClient
+          AlternateColor = 13631478
+          AutoAdvance = aaNone
+          Color = 13627366
+          Columns = <          
+            item
+              MaxSize = 10
+              Title.Caption = 'Country code'
+              Width = 30
+              FieldName = 'COUNTRYCODE'
+            end          
+            item
+              MinSize = 14
+              MaxSize = 300
+              Title.Caption = 'Vessel code'
+              FieldName = 'VESSELCODE'
+            end          
+            item
+              MinSize = 14
+              MaxSize = 300
+              Title.Caption = 'Station #'
+              FieldName = 'STNUMINCRUISE'
+            end          
+            item
+              MinSize = 14
+              MaxSize = 300
+              Title.Caption = 'Project code'
+              FieldName = 'PROJECTCODE'
+            end          
+            item
+              MinSize = 14
+              MaxSize = 300
+              Title.Caption = 'Institute code'
+              Width = 180
+              FieldName = 'INSTITUTECODE'
+            end          
+            item
+              Title.Caption = 'Instrument'
+              FieldName = 'INSTRUMENT'
+            end          
+            item
+              Title.Caption = 'Source unique ID'
+              FieldName = 'SOURCEUNIQUEID'
+            end          
+            item
+              Title.Caption = 'Source data orig.'
+              FieldName = 'SOURCEDATAORIGIN'
+            end          
+            item
+              Title.Caption = 'Cruise #'
+              FieldName = 'VESSELCRUISEID'
+            end>
+          DataSource = DS
+          FixedCols = 0
+          Flat = True
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+          ParentFont = False
+          Scrollbars = ssAutoBoth
+          TabOrder = 2
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -17
+          TitleFont.Name = 'MS Sans Serif'
+          OnCellClick = DBGridStationCellClick
+          OnKeyUp = DBGridStationKeyUp
+          OnPrepareCanvas = DBGridStationPrepareCanvas
+          OnTitleClick = DBGridStationTitleClick
+        end
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 78
+    Top = 0
+    Width = 1300
+    Align = alTop
+    AutoSize = True
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 74
+    ClientWidth = 1296
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    ParentFont = False
+    TabOrder = 1
+    object Panel2: TPanel
+      Left = 0
+      Height = 74
+      Top = 0
+      Width = 1296
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 74
+      ClientWidth = 1296
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      ParentFont = False
+      TabOrder = 0
+      object StatusBar1: TStatusBar
+        Left = 0
+        Height = 36
+        Top = 0
+        Width = 1296
+        Align = alTop
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Panels = <        
+          item
+            Text = '[Database]'
+            Width = 106
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 210
+          end        
+          item
+            Width = 218
+          end        
+          item
+            Width = 50
+          end>
+        ParentFont = False
+        SimplePanel = False
+      end
+      object StatusBar2: TStatusBar
+        Left = 0
+        Height = 36
+        Top = 36
+        Width = 1296
+        Align = alTop
+        BorderSpacing.Bottom = 2
+        Font.Color = clWindowText
+        Font.Height = -17
+        Font.Name = 'MS Sans Serif'
+        Panels = <        
+          item
+            Text = '[Selection]'
+            Width = 106
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 150
+          end        
+          item
+            Width = 210
+          end        
+          item
+            Width = 218
+          end        
+          item
+            Width = 240
+          end>
+        ParentFont = False
+        SimplePanel = False
+      end
+      object ListBox1: TListBox
+        Left = 296
+        Height = 58
+        Top = 8
+        Width = 150
+        ItemHeight = 0
+        TabOrder = 2
+        Visible = False
+      end
+    end
+  end
+  object ListBox2: TListBox
+    Left = 512
+    Height = 58
+    Top = 8
+    Width = 150
+    ItemHeight = 0
+    TabOrder = 2
+    Visible = False
+  end
+  object DB1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'C:\OceanShell\data\__final\ArcticDataset.FDB'
+    KeepConnection = True
+    Password = 'masterkey'
+    Transaction = TR
+    UserName = 'SYSDBA'
+    CharSet = 'UTF8'
+    LogEvents = []
+    CheckTransactionParams = False
+    left = 80
+    top = 208
+  end
+  object TR: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = DB1
+    left = 144
+    top = 208
+  end
+  object q1: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB1
+    Transaction = TR
+    Params = <>
+    left = 216
+    top = 208
+  end
+  object q2: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB1
+    Transaction = TR
+    Params = <>
+    left = 280
+    top = 208
+  end
+  object q3: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB1
+    Transaction = TR
+    Params = <>
+    left = 344
+    top = 208
+  end
+  object q4: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB1
+    Transaction = TR
+    Params = <>
+    left = 408
+    top = 208
+  end
+  object DB2: TIBConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'z:\OceanShell\databases\Ocean.FDB'
+    KeepConnection = True
+    Password = 'masterkey'
+    Transaction = TR2
+    UserName = 'SYSDBA'
+    CharSet = 'UTF8'
+    LogEvents = []
+    CheckTransactionParams = False
+    left = 80
+    top = 304
+  end
+  object TR2: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = DB2
+    left = 144
+    top = 304
+  end
+  object ib2q1: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB2
+    Transaction = TR2
+    Params = <>
+    left = 216
+    top = 304
+  end
+  object ib2q2: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB2
+    Transaction = TR2
+    Params = <>
+    left = 280
+    top = 304
+  end
+  object MM: TMainMenu
+    Images = frmicons.IL1
+    left = 416
+    top = 296
+    object iFile: TMenuItem
+      Caption = 'File'
+      object iOpenDB: TMenuItem
+        Caption = 'Open DB'
+        ImageIndex = 312
+        OnClick = iOpenDBClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem1: TMenuItem
+        Caption = 'Settings'
+        ImageIndex = 235
+        OnClick = MenuItem1Click
+      end
+    end
+    object iImport: TMenuItem
+      Caption = 'Import'
+      object MenuItem4: TMenuItem
+        Caption = 'ODB'
+        OnClick = MenuItem4Click
+      end
+      object iLoad_IAOOC: TMenuItem
+        Caption = 'IAOOC'
+        OnClick = iLoad_IAOOCClick
+      end
+      object iIARC: TMenuItem
+        Caption = 'IARC'
+        OnClick = iIARCClick
+      end
+      object iICES: TMenuItem
+        Caption = 'ICES'
+        OnClick = iICESClick
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Kirillov'
+        OnClick = MenuItem6Click
+      end
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Services'
+      object iRemoveDuplicates: TMenuItem
+        Caption = 'Remove duplicates'
+        OnClick = iRemoveDuplicatesClick
+      end
+      object MenuItem7: TMenuItem
+        Caption = '-'
+      end
+      object iGEBCO: TMenuItem
+        Caption = 'GEBCO'
+        OnClick = iGEBCOClick
+      end
+      object iLastLevel: TMenuItem
+        Caption = 'Last Level'
+        OnClick = iLastLevelClick
+      end
+    end
+    object iExport: TMenuItem
+      Caption = 'Export'
+      object iASCII: TMenuItem
+        Caption = 'ASCII'
+        ImageIndex = 186
+        OnClick = iASCIIClick
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Tools'
+      object imap: TMenuItem
+        Caption = 'Map'
+        OnClick = imapClick
+      end
+      object MenuItem8: TMenuItem
+        Caption = 'Plot All Parameters'
+        OnClick = MenuItem8Click
+      end
+    end
+    object ihelp: TMenuItem
+      Caption = 'Help'
+      object itest: TMenuItem
+        Caption = 'test'
+        OnClick = itestClick
+      end
+    end
+  end
+  object OD: TOpenDialog
+    left = 472
+    top = 296
+  end
+  object CDS: TSQLQuery
+    MaxIndexesCount = 100
+    FieldDefs = <>
+    Database = DB1
+    Transaction = TR
+    Params = <>
+    left = 464
+    top = 208
+  end
+  object DS: TDataSource
+    DataSet = CDS
+    left = 528
+    top = 208
+  end
+  object SD: TSaveDialog
+    left = 538
+    top = 298
+  end
+end

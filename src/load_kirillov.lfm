@@ -1,0 +1,47 @@
+object frmloadkirillov: Tfrmloadkirillov
+  Left = 655
+  Height = 391
+  Top = 290
+  Width = 657
+  Caption = 'Load Kirillov data'
+  ClientHeight = 391
+  ClientWidth = 657
+  DesignTimePPI = 144
+  LCLVersion = '2.0.6.0'
+  object btnStart: TButton
+    Left = 528
+    Height = 38
+    Top = 16
+    Width = 113
+    Caption = 'Start'
+    OnClick = btnStartClick
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 16
+    Height = 303
+    Top = 72
+    Width = 624
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object chkWrite: TCheckBox
+    Left = 440
+    Height = 29
+    Top = 25
+    Width = 72
+    Caption = 'Write'
+    TabOrder = 2
+  end
+  object Edit1: TEdit
+    Left = 16
+    Height = 33
+    Top = 21
+    Width = 408
+    TabOrder = 3
+    Text = 'Z:\ODBViewer\data\Kirillov\ice89'
+  end
+end

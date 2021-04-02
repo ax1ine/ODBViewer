@@ -1,0 +1,118 @@
+object frmprofile_station_all: Tfrmprofile_station_all
+  Left = 429
+  Height = 621
+  Top = 259
+  Width = 1099
+  Caption = 'All parameters'
+  ClientHeight = 621
+  ClientWidth = 1099
+  Color = clBtnFace
+  DesignTimePPI = 144
+  Font.Color = clWindowText
+  Font.Height = -17
+  Font.Name = 'Tahoma'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 621
+    Top = 0
+    Width = 1099
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 621
+    ClientWidth = 1099
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 0
+      Height = 388
+      Top = 0
+      Width = 1099
+      Align = alClient
+      AlternateColor = 13631478
+      AutoAdvance = aaNone
+      Color = 13627366
+      Columns = <>
+      DataSource = DS1
+      FixedCols = 0
+      Flat = True
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'Tahoma'
+      Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgRowHighlight]
+      ParentFont = False
+      PopupMenu = PM
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'MS Sans Serif'
+      OnMouseDown = DBGrid1MouseDown
+      OnPrepareCanvas = DBGrid1PrepareCanvas
+    end
+    object Splitter2: TSplitter
+      Cursor = crVSplit
+      Left = 0
+      Height = 8
+      Top = 388
+      Width = 1099
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
+    object pCharts: TScrollBox
+      Left = 0
+      Height = 225
+      Top = 396
+      Width = 1099
+      HorzScrollBar.Page = 1
+      VertScrollBar.Page = 1
+      VertScrollBar.Visible = False
+      Align = alBottom
+      ParentBiDiMode = False
+      TabOrder = 2
+    end
+  end
+  object DS1: TDataSource
+    left = 360
+    top = 168
+  end
+  object PM: TPopupMenu
+    AutoPopup = False
+    left = 288
+    top = 168
+    object SetFlagBelow: TMenuItem
+      Caption = 'Set selected flag BELOW this level'
+      OnClick = SetFlagBelowClick
+    end
+    object SetFlagAbove: TMenuItem
+      Caption = 'Set selected flag ABOVE this level'
+      OnClick = SetFlagAboveClick
+    end
+  end
+  object Toolset: TChartToolset
+    left = 448
+    top = 168
+    object DPC: TDataPointClickTool
+      Shift = [ssLeft]
+      GrabRadius = 12
+      ActiveCursor = crHandPoint
+      OnPointClick = DPCPointClick
+    end
+    object DPH: TDataPointHintTool
+      GrabRadius = 12
+      ActiveCursor = crHandPoint
+    end
+    object ZD: TZoomDragTool
+      Shift = [ssLeft]
+      Brush.Style = bsClear
+      RestoreExtentOn = [zreDragTopLeft, zreDragTopRight, zreDragBottomLeft]
+    end
+    object ZMW: TZoomMouseWheelTool
+    end
+  end
+end

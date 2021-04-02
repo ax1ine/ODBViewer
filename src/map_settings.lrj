@@ -1,0 +1,19 @@
+{"version":1,"strings":[
+{"hash":159572851,"name":"tfrmmap_settings.caption","sourcebytes":[77,97,112,32,115,101,116,116,105,110,103,115],"value":"Map settings"},
+{"hash":1371,"name":"tfrmmap_settings.btnsave.caption","sourcebytes":[79,107],"value":"Ok"},
+{"hash":178827278,"name":"tfrmmap_settings.tabsheet1.caption","sourcebytes":[83,116,97,116,105,111,110],"value":"Station"},
+{"hash":14691411,"name":"tfrmmap_settings.rgpointersize.caption","sourcebytes":[82,97,100,105,117,115,44,32,112,105,120,101,108,115],"value":"Radius, pixels"},
+{"hash":70916002,"name":"tfrmmap_settings.groupbox1.caption","sourcebytes":[73,110,110,101,114,32,99,111,108,111,114],"value":"Inner color"},
+{"hash":16837026,"name":"tfrmmap_settings.groupbox2.caption","sourcebytes":[66,111,114,100,101,114,32,99,111,108,111,114],"value":"Border color"},
+{"hash":87593410,"name":"tfrmmap_settings.tabsheet5.caption","sourcebytes":[77,97,114,107,101,114],"value":"Marker"},
+{"hash":169236130,"name":"tfrmmap_settings.groupbox3.caption","sourcebytes":[83,101,108,101,99,116,105,111,110,32,109,97,114,107,101,114,32,40,34,99,114,111,115,115,34,41,32,99,111,108,111,114],"value":"Selection marker (\"cross\") color"},
+{"hash":21376,"name":"tfrmmap_settings.tabsheet2.caption","sourcebytes":[77,97,112],"value":"Map"},
+{"hash":262654354,"name":"tfrmmap_settings.groupbox5.caption","sourcebytes":[77,97,112,32,98,97,99,107,103,114,111,117,110,100,32,99,111,108,111,114],"value":"Map background color"},
+{"hash":107842338,"name":"tfrmmap_settings.groupbox6.caption","sourcebytes":[76,97,110,100,32,99,111,108,111,114],"value":"Land color"},
+{"hash":166048706,"name":"tfrmmap_settings.groupbox7.caption","sourcebytes":[76,97,110,100,32,99,111,110,116,111,117,114,32,99,111,108,111,114],"value":"Land contour color"},
+{"hash":266365826,"name":"tfrmmap_settings.groupbox8.caption","sourcebytes":[71,108,111,98,101,39,115,32,100,105,115,99,32,99,111,108,111,114],"value":"Globe's disc color"},
+{"hash":221842884,"name":"tfrmmap_settings.chkshowstars.caption","sourcebytes":[83,104,111,119,32,115,116,97,114,115,32,105,110,32,116,104,101,32,98,97,99,107,103,114,111,117,100],"value":"Show stars in the backgroud"},
+{"hash":106664595,"name":"tfrmmap_settings.tabsheet3.caption","sourcebytes":[67,111,110,116,114,111,108,115],"value":"Controls"},
+{"hash":100125600,"name":"tfrmmap_settings.groupbox4.caption","sourcebytes":[90,111,111,109,32,115,116,101,112],"value":"Zoom step"},
+{"hash":115259332,"name":"tfrmmap_settings.btnreset.caption","sourcebytes":[82,101,115,101,116,32,116,111,32,100,101,102,97,117,108,116],"value":"Reset to default"}
+]}

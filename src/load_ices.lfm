@@ -1,0 +1,68 @@
+object frmLoadICES: TfrmLoadICES
+  Left = 522
+  Height = 475
+  Top = 277
+  Width = 947
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'frmLoadICES'
+  ClientHeight = 475
+  ClientWidth = 947
+  DesignTimePPI = 144
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object btnStart: TButton
+    Left = 32
+    Height = 38
+    Top = 407
+    Width = 222
+    Caption = 'Start'
+    OnClick = btnStartClick
+    TabOrder = 0
+  end
+  object lbC: TListBox
+    Left = 32
+    Height = 296
+    Top = 64
+    Width = 222
+    ItemHeight = 0
+    TabOrder = 1
+  end
+  object chkWrite: TCheckBox
+    Left = 32
+    Height = 29
+    Top = 368
+    Width = 136
+    Caption = 'Write into DB'
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 272
+    Height = 381
+    Top = 64
+    Width = 648
+    Lines.Strings = (
+      'Memo1'
+    )
+    ScrollBars = ssAutoBoth
+    TabOrder = 3
+  end
+  object eDataPath: TEdit
+    Left = 136
+    Height = 33
+    Top = 15
+    Width = 784
+    OnChange = eDataPathChange
+    TabOrder = 4
+    Text = 'eDataPath'
+  end
+  object Label1: TLabel
+    Left = 32
+    Height = 25
+    Top = 23
+    Width = 89
+    Caption = 'Data folder'
+    ParentColor = False
+  end
+end
