@@ -26,6 +26,7 @@ type
     iOpenDB: TMenuItem;
     iExport: TMenuItem;
     iASCII: TMenuItem;
+    Label1: TLabel;
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     btnSelect: TButton;
@@ -66,6 +67,8 @@ type
     iIARC: TMenuItem;
     iLoad_IAOOC: TMenuItem;
     MenuItem8: TMenuItem;
+    iPlotSingleParameter: TMenuItem;
+    MenuItem9: TMenuItem;
     MM: TMainMenu;
     OD: TOpenDialog;
     PageControl1: TPageControl;
@@ -111,12 +114,15 @@ type
     procedure iLoad_IAOOCClick(Sender: TObject);
     procedure imapClick(Sender: TObject);
     procedure iOpenDBClick(Sender: TObject);
+    procedure iPlotSingleParameterClick(Sender: TObject);
     procedure iRemoveDuplicatesClick(Sender: TObject);
     procedure itestClick(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem4Click(Sender: TObject);
     procedure MenuItem6Click(Sender: TObject);
     procedure MenuItem8Click(Sender: TObject);
+    procedure MenuItem9Click(Sender: TObject);
 
   private
     procedure DatabaseInfo;
@@ -145,7 +151,7 @@ var
 
   MapDataset: array of MapDS;
   frmmap_open, frmprofile_station_all_open, frmprofile_plot_all_open,
-  frmparameters_list_open:boolean;
+  frmparameters_list_open, frmprofile_station_single_open:boolean;
 
 
 const
@@ -165,7 +171,8 @@ implementation
 
 uses settings, sortbufds, load_ices, export_ASCII, map, procedures,
      load_odb, load_kirillov, load_iaoos, test, bathymetry, load_iarc,
-     profile_station_all, parameters_list, profile_plot_all;
+     profile_station_all, parameters_list, profile_plot_all, export_diva,
+     profile_station_single;
 
 
 procedure Tfrmmain.FormShow(Sender: TObject);
@@ -267,6 +274,7 @@ begin
   NavigationOrder:=true;
   frmmap_open:=false;
   frmprofile_plot_all_open:=false;
+  frmprofile_station_single_open:=false;
 end;
 
 
@@ -308,6 +316,13 @@ begin
     DatabaseInfo;
   end;
 
+end;
+
+procedure Tfrmmain.iPlotSingleParameterClick(Sender: TObject);
+begin
+ if frmprofile_station_single_open=false  then
+ frmprofile_station_single:= Tfrmprofile_station_single.Create(Self) else frmprofile_station_single.SetFocus;
+ frmprofile_station_single_open:=true;
 end;
 
 procedure Tfrmmain.iRemoveDuplicatesClick(Sender: TObject);
@@ -361,14 +376,6 @@ ListBox2.Clear;
     for k:=0 to ListBox1.Items.Count-1 do
      if (copy(ListBox1.Items.Strings[k],1,2)='P_') then
        ListBox2.Items.Add(ListBox1.Items.Strings[k]);
-
-  seLatMin.Value:=IBLatMin;
-  seLatMax.Value:=IBLatMax;
-  seLonMin.Value:=IBLonMin;
-  seLonMax.Value:=IBLonMax;
-
-  dtpDateMin.Date:=IBDateMin;
-  dtpDateMax.Date:=IBDateMax;
 
   for k:=1 to 7 do StatusBar2.Panels[k].Text:='---';
 
@@ -531,7 +538,7 @@ begin
      q1.SQL.Text:=' select distinct StVesselName from Station ';
      q1.Open;
    while not q1.Eof do begin
-     CbVessel.Items.Add(q1.Fields[0].AsString);
+     CbVessel.AddItem(q1.Fields[0].AsString, cbUnchecked, true);
      q1.Next;
    end;
      q1.Close;
@@ -801,6 +808,11 @@ begin
     frmparameters_list_open:=true;
 end;
 
+procedure Tfrmmain.MenuItem9Click(Sender: TObject);
+begin
+  export_diva.exportDIVA;
+end;
+
 
 procedure Tfrmmain.itestClick(Sender: TObject);
 begin
@@ -811,6 +823,17 @@ begin
     frmtest.Free;
     frmtest:= nil;
   end;
+end;
+
+procedure Tfrmmain.Label1Click(Sender: TObject);
+begin
+  seLatMin.Value:=IBLatMin;
+  seLatMax.Value:=IBLatMax;
+  seLonMin.Value:=IBLonMin;
+  seLonMax.Value:=IBLonMax;
+
+  dtpDateMin.Date:=IBDateMin;
+  dtpDateMax.Date:=IBDateMax;
 end;
 
 
@@ -891,6 +914,19 @@ begin
     Ini.WriteInteger( 'ODBViewer', 'left',   Left);
     Ini.WriteInteger( 'ODBViewer', 'width',  Width);
     Ini.WriteInteger( 'ODBViewer', 'weight', Height);
+
+    Ini.WriteFloat  ( 'ODBViewer', 'station_latmin',   seLatMin.Value );
+    Ini.WriteFloat  ( 'ODBViewer', 'station_latmax',   seLatMax.Value);
+    Ini.WriteFloat  ( 'ODBViewer', 'station_lonmin',   seLonMin.Value);
+    Ini.WriteFloat  ( 'ODBViewer', 'station_lonmax',   seLonMax.Value);
+
+    Ini.WriteBool   ( 'ODBViewer', 'station_period',   chkPeriod.Checked);
+    Ini.WriteString ( 'ODBViewer', 'station_platform', cbVessel.Text);
+    Ini.WriteString ( 'ODBViewer', 'station_country',  cbCountry.Text);
+    Ini.WriteString ( 'ODBViewer', 'station_source',   cbSource.Text);
+    Ini.WriteDateTime('ODBViewer', 'station_datemin',  dtpDateMin.DateTime);
+    Ini.WriteDateTime('ODBViewer', 'station_datemax',  dtpDateMax.DateTime);
+
 
     (* cruise table columns *)
     With DBGridStation do begin

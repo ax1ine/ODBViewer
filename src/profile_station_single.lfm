@@ -1,7 +1,7 @@
 object frmprofile_station_single: Tfrmprofile_station_single
-  Left = 454
+  Left = 520
   Height = 634
-  Top = 329
+  Top = 157
   Width = 997
   Caption = 'frmprofile_station_single'
   ClientHeight = 634
@@ -11,6 +11,7 @@ object frmprofile_station_single: Tfrmprofile_station_single
   OnShow = FormShow
   Position = poOwnerFormCenter
   LCLVersion = '2.0.6.0'
+  Visible = True
   object Panel1: TPanel
     Left = 0
     Height = 562
@@ -36,7 +37,7 @@ object frmprofile_station_single: Tfrmprofile_station_single
     end
     object Chart1: TChart
       Left = 0
-      Height = 457
+      Height = 521
       Top = 33
       Width = 327
       AxisList = <      
@@ -66,23 +67,11 @@ object frmprofile_station_single: Tfrmprofile_station_single
       Toolset = ChartToolset1
       Align = alClient
     end
-    object clbSeries: TChartListbox
-      Left = 0
-      Height = 64
-      Top = 498
-      Width = 327
-      Chart = Chart1
-      Align = alBottom
-      Columns = 2
-      ItemHeight = 0
-      MultiSelect = True
-      TabOrder = 2
-    end
     object Splitter2: TSplitter
       Cursor = crVSplit
       Left = 0
       Height = 8
-      Top = 490
+      Top = 554
       Width = 327
       Align = alBottom
       ResizeAnchor = akBottom
@@ -140,7 +129,7 @@ object frmprofile_station_single: Tfrmprofile_station_single
         OnClick = btnDeleteClick
       end
       object btnCommit: TToolButton
-        Left = 166
+        Left = 262
         Hint = 'Commit changes'
         Top = 2
         Caption = 'Save'
@@ -148,10 +137,23 @@ object frmprofile_station_single: Tfrmprofile_station_single
         OnClick = btnCommitClick
       end
       object ToolButton4: TToolButton
-        Left = 161
+        Left = 257
         Height = 30
         Top = 2
         Caption = 'ToolButton4'
+        Style = tbsDivider
+      end
+      object btnDeleteProf: TToolButton
+        Left = 166
+        Top = 2
+        Caption = 'Delete prof'
+        OnClick = btnDeleteProfClick
+      end
+      object ToolButton2: TToolButton
+        Left = 161
+        Height = 30
+        Top = 2
+        Caption = 'ToolButton2'
         Style = tbsDivider
       end
     end
@@ -182,34 +184,6 @@ object frmprofile_station_single: Tfrmprofile_station_single
       OnSelectEditor = DBGridSingleProfileSelectEditor
     end
   end
-  object StatusBar1: TStatusBar
-    Left = 0
-    Height = 36
-    Top = 562
-    Width = 997
-    Panels = <    
-      item
-        Text = 'Level'
-        Width = 65
-      end    
-      item
-        Width = 150
-      end    
-      item
-        Width = 150
-      end    
-      item
-        Width = 150
-      end    
-      item
-        Width = 150
-      end    
-      item
-        Width = 50
-      end>
-    SimplePanel = False
-    SizeGrip = False
-  end
   object StatusBar2: TStatusBar
     Left = 0
     Height = 36
@@ -238,8 +212,38 @@ object frmprofile_station_single: Tfrmprofile_station_single
     SimplePanel = False
     SizeGrip = False
   end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 36
+    Top = 562
+    Width = 997
+    Panels = <    
+      item
+        Text = 'Level'
+        Width = 65
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 150
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+    SizeGrip = False
+  end
   object Qt: TSQLQuery
     FieldDefs = <>
+    Database = frmmain.DB1
+    Transaction = frmmain.TR
     Params = <>
     left = 457
     top = 179
@@ -256,10 +260,6 @@ object frmprofile_station_single: Tfrmprofile_station_single
       Shift = [ssLeft]
       ActiveCursor = crHandPoint
       OnPointClick = DPCTPointClick
-    end
-    object DPHT: TDataPointHintTool
-      OnAfterMouseMove = DPHTAfterMouseMove
-      ActiveCursor = crHandPoint
     end
     object ZDT: TZoomDragTool
       Shift = [ssLeft]
@@ -287,7 +287,6 @@ object frmprofile_station_single: Tfrmprofile_station_single
     object btnBestProfile: TMenuItem
       Caption = 'This profile is the BEST!'
       ImageIndex = 463
-      OnClick = btnBestProfileClick
     end
   end
 end

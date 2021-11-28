@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, main, icons, test, load_kirillov, load_iarc, tachartlazaruspkg;
+  Forms, main, icons, test, load_kirillov, load_iarc, tachartlazaruspkg, export_DIVA;
 
 {$R *.res}
 

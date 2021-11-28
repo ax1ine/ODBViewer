@@ -179,6 +179,7 @@ try
       SQL.Add(' SELECT * ');
       SQL.Add(' FROM '+ CurrentParTable );
       SQL.Add(' WHERE ABSNUM=:ID ');
+      SQL.Add(' AND LEVEL_<=150 ');
       SQL.Add(' ORDER BY LEVEL_');
       ParamByName('ID').AsInteger:=ID;
      Open;
